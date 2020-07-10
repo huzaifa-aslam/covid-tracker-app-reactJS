@@ -31,6 +31,7 @@ function Charts({ chGlobalData: { confirmed, recovered, deaths }, country }) {
             data: newDailyData.map((data) => data.confirmed),
             label: "Infected",
             borderColor: "#3333ff",
+            backgroundColor: "rgba(0, 0, 255, 0.5)",
             fill: true,
           },
           {
@@ -72,9 +73,7 @@ function Charts({ chGlobalData: { confirmed, recovered, deaths }, country }) {
     const FetchApi = async () => {
       const dailyData = await FetchdailyData();
       setNewDailyData(dailyData);
-      //console.log("dailyData",dailyData)
     };
-    //console.log(newDailyData);
     FetchApi();
   }, []);
 
@@ -82,8 +81,6 @@ function Charts({ chGlobalData: { confirmed, recovered, deaths }, country }) {
     <div className={classes.root}>
       <Grid container>
         <Grid item xs={12}>
-          <h2>Line Example</h2>
-
           {country ? BarChart : LineChart}
         </Grid>
       </Grid>
