@@ -27,7 +27,7 @@ export default function Cards({
   if (!confirmed) {
     return "loading";
   }
-  //console.log(globalData)
+  console.log(globalData)
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
